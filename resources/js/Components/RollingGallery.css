@@ -1,0 +1,113 @@
+/* Container untuk gallery */
+.gallery-container {
+    position: relative;
+    height: 500px; /* Ukuran default untuk desktop */
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Efek gradient di sisi kiri dan kanan */
+.gallery-gradient {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 48px;
+    z-index: 10;
+}
+
+.gallery-gradient-left {
+    left: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #060606 100%);
+}
+
+.gallery-gradient-right {
+    right: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #060606 100%);
+}
+
+/* Konten gallery */
+.gallery-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+/* Track untuk item di gallery */
+.gallery-track {
+    display: flex;
+    height: auto;
+    min-height: 200px;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    transform-style: preserve-3d;
+    width: 100%;
+}
+
+/* Setiap item di gallery */
+.gallery-item {
+    position: relative;
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 8%;
+    backface-visibility: hidden;
+    transition: 0.3s ease;
+    min-width: 250px;  /* Minimum width untuk item */
+}
+
+/* Gambar di dalam item */
+.gallery-img {
+    pointer-events: none;
+    height: 120px;
+    width: 300px;
+    border-radius: 15px;
+    border: 3px solid #fff;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+
+/* Efek hover pada gambar */
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+/* Responsif untuk layar lebih kecil (max-width: 768px) */
+@media (max-width: 768px) {
+    .gallery-container {
+        height: 300px; /* Mengurangi ukuran container di mobile */
+    }
+    
+    .gallery-item {
+        padding: 6%;
+        min-width: 200px; /* Ukuran minimum untuk item di mobile */
+    }
+    
+    .gallery-img {
+        height: 100px;
+        width: 220px;
+    }
+}
+
+/* Responsif untuk desktop (min-width: 769px) */
+@media (min-width: 769px) {
+    .gallery-container {
+        height: 400px; /* Ukuran container lebih besar di desktop */
+    }
+    
+    .gallery-item {
+        padding: 8%;
+        min-width: 250px; /* Lebih besar di desktop */
+    }
+    
+    .gallery-img {
+        height: 120px;
+        width: 300px;
+    }
+}
