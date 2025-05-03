@@ -14,6 +14,25 @@ Route::get('/', function () {
     ]);
 });
 
+use App\Http\Controllers\Love\MessageController;
+Route::get('/love', function () {
+    return Inertia::render('Heart/Password');
+});
+
+// Route::get('/love/messages', function () {
+//     return Inertia::render('Heart/RomanticFloatSpace');
+// });
+
+Route::get('/love/messages', [MessageController::class, 'index']);
+Route::post('/love/message', [MessageController::class, 'store']);
+Route::patch('/love/message/{id}/read', [MessageController::class, 'markAsRead']);
+
+
+Route::get('/our-memories', function () {
+    return Inertia::render('Heart/OurMemories');
+});
+
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
