@@ -38,6 +38,12 @@ export default function Header() {
           >
             Our Memories
           </Link>
+          <Link
+            href="/fun/prediksi"
+            className="text-white hover:text-teal-400 transition-all duration-300 ease-in-out transform hover:scale-110"
+          >
+            Diabetes
+          </Link>
           
         </nav>
       </div>

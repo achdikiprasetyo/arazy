@@ -20,12 +20,12 @@ export default function OurMemories() {
 `;
     const timeline = [
         {
-            year: "2025 Februari",
+            year: "2021 Februari",
             title: "Pertama kali main bareng (Klik aku :>)",
             content: "Waktu itu masih awkward tapi seru banget, karena kamu selalu ketawa duluan walau hal receh.",
         },
         {
-            year: "2025 Ramadhan",
+            year: "2021 Ramadhan",
             title: "Masih maen bareng",
             content: "Kita maen bareng tapi maen game tolol,",
         },

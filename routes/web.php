@@ -14,6 +14,11 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/flower', function () {
+    return view('welcome');
+});
+
+
 use App\Http\Controllers\Love\MessageController;
 Route::get('/love', function () {
     return Inertia::render('Heart/Password');
@@ -26,6 +31,10 @@ Route::get('/love', function () {
 Route::get('/love/messages', [MessageController::class, 'index']);
 Route::post('/love/message', [MessageController::class, 'store']);
 Route::patch('/love/message/{id}/read', [MessageController::class, 'markAsRead']);
+
+Route::get('/fun/prediksi', function () {
+    return Inertia::render('Diabetes/PredictForm');
+});
 
 
 Route::get('/our-memories', function () {
